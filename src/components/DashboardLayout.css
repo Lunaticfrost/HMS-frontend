@@ -1,0 +1,44 @@
+.sidebar {
+    flex: 0 0 200px;
+    background-color: #343a40;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-menu li {
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+  
+  .sidebar-menu li a {
+    color: #fff;
+    text-decoration: solid;
+  }
+  
+  .sidebar-menu li a:hover {
+    color: #286cff;
+  }
+  
+  .container {
+    display: flex;
+    height: 100%;
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .background-image {
+    background-image: url('F:\React\front-end-hms\hms\src\components\Images\hostel-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
