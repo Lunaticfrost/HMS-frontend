@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Navbar, Container, Row, Col } from "react-bootstrap";
-import { FaHome } from 'react-icons/fa';
+import { FaHome } from "react-icons/fa";
+
+import Fab from "@mui/material/Fab";
+import DeleteIcon from '@mui/icons-material/Delete';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import ViewCozyIcon from '@mui/icons-material/ViewCozy';
 
 import DashboardCards from "./DashboardCards";
 import "./DashboardLayout.css";
@@ -38,27 +45,43 @@ function DashboardLayout() {
             <ul className="sidebar-menu">
               <li>
                 <Link to="/add-student" onClick={sideClickHandler}>
-                  Add Student
+                  <Fab variant="extended" color="secondary" aria-label="add">
+                    <GroupAddIcon />
+                       Add Student    
+                  </Fab>
                 </Link>
               </li>
               <li>
                 <Link to="/remove-student" onClick={sideClickHandler}>
-                  Remove Student
+                <Fab variant="extended" color="secondary" aria-label="add">
+                    <DeleteIcon />
+                    Remove Student
+                  </Fab>
+                  
                 </Link>
               </li>
               <li>
                 <Link to="/add-room" onClick={sideClickHandler}>
-                  Add Room
+                <Fab variant="extended" color="secondary" aria-label="add">
+                    <MeetingRoomIcon />
+                    Add Room
+                  </Fab>
                 </Link>
               </li>
               <li>
                 <Link to="/view-students" onClick={sideClickHandler}>
-                  View Students
+                <Fab variant="extended" color="secondary" aria-label="add">
+                    <VisibilityIcon />
+                    View Students
+                  </Fab>
                 </Link>
               </li>
               <li>
                 <Link to="/view-rooms" onClick={sideClickHandler}>
-                  View Rooms
+                <Fab variant="extended" color="secondary" aria-label="add">
+                    <ViewCozyIcon />
+                    View Rooms
+                  </Fab>
                 </Link>
               </li>
             </ul>
