@@ -9,16 +9,19 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    
   }
   
   .sidebar-menu li {
     margin-bottom: 40px;
     margin-top: 20px;
+    margin: 35px;
   }
   
   .sidebar-menu li a {
     color: #fff;
     text-decoration: solid;
+    margin: auto;
   }
   
   .sidebar-menu li a:hover {
@@ -36,7 +39,7 @@
   }
 
   .background-image {
-    background-image: url('C:\Users\2263102\Desktop\PROJECT\HMS-frontend-main\src\components\Images\hostel-bg.jpg');
+    background-image: url('F:\React\HMS-frontend\src\components\Images\hostel-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

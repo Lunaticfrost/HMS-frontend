@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Alert from '@mui/material/Alert';
 import './AddStudent.css';
 
 function AddStudent() {
@@ -11,6 +12,9 @@ function AddStudent() {
     parentPhone: '',
     roomType: '',
   });
+
+  const [isSuccess,setIsSuccess] = useState(false);
+  const [isFailure,setIsFailure] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,9 +29,22 @@ function AddStudent() {
       });
       if (response.ok) {
         // Success: Handle the response
+        setIsSuccess(true);
         console.log('Student added successfully');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          foodPreference: '',
+          parentName: '',
+          parentPhone: '',
+          roomType: '',
+        });
+        
+        
       } else {
         // Error: Handle the response
+        setIsFailure(true);
         console.log('Error adding student');
       }
     } catch (error) {
@@ -40,9 +57,15 @@ function AddStudent() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    setIsSuccess(false);
+    setIsFailure(false);
   };
 
+
   return (
+    <>
+    {isFailure && <Alert severity="error">Some Error Occurred</Alert>}
+    {isSuccess && <Alert severity="success">Student Successfully Added</Alert>}
     <div className="add-student-container">
       <h2 className="add-student-heading">Add Student</h2>
       <form className="add-student-form" onSubmit={handleSubmit}>
@@ -96,6 +119,7 @@ function AddStudent() {
         <button type="submit">Add Student</button>
       </form>
     </div>
+    </>
   );
 }
 
