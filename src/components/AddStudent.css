@@ -7,12 +7,14 @@
   .add-student-heading {
     font-size: 24px;
     margin-bottom: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
   }
   
   .add-student-form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 100%;
     padding: 20px;
     background-color: #f5f5f5;
     border-radius: 8px;
@@ -20,13 +22,16 @@
   
   .add-student-form label {
     margin-bottom: 10px;
+    margin-right: 5px;
     font-weight: bold;
+    font-family: sans-serif;
   }
   
   .add-student-form input,
   .add-student-form select {
     padding: 10px;
     margin-bottom: 15px;
+    margin: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }

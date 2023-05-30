@@ -21,6 +21,8 @@
   
   .add-room-form label {
     margin-bottom: 10px;
+    display: fluid;
+    margin: auto;
   }
   
   .add-room-form input,
@@ -29,6 +31,8 @@
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    display: fluid;
+    margin: 10px;
   }
   
   .add-room-form button {

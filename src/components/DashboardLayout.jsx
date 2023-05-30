@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Navbar, Container, Row, Col } from "react-bootstrap";
-import { FaHome } from "react-icons/fa";
+//import { FaHome } from "react-icons/fa";
 
 import Fab from "@mui/material/Fab";
-import DeleteIcon from '@mui/icons-material/Delete';
-import GroupAddIcon from '@mui/icons-material/GroupAdd';
-import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import ViewCozyIcon from '@mui/icons-material/ViewCozy';
+import DeleteIcon from "@mui/icons-material/Delete";
+import GroupAddIcon from "@mui/icons-material/GroupAdd";
+import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import ViewCozyIcon from "@mui/icons-material/ViewCozy";
+import IconButton from '@mui/material/IconButton';
+import HomeIcon from '@mui/icons-material/Home';
 
 import DashboardCards from "./DashboardCards";
 import "./DashboardLayout.css";
@@ -33,36 +35,35 @@ function DashboardLayout() {
     <div className="dashboard-layout background-image">
       <Navbar bg="dark" variant="dark" expand="lg" className="mb-0">
         <Container fluid>
-          <button onClick={homeClickHandler} type="button">
-            <FaHome />
-          </button>
+          <IconButton aria-label="Home" color="secondary" size="large" onClick={homeClickHandler}>
+            <HomeIcon  fontSize="inherit" />
+          </IconButton>
           <Navbar.Brand className="mx-auto">Hostel Management</Navbar.Brand>
         </Container>
       </Navbar>
       <Container fluid className="p-0">
         <Row className="h-100">
-          <Col sm={2} className="bg-dark text-light sidebar">
+          <Col sm={2} className="bg-dark text-dark sidebar">
             <ul className="sidebar-menu">
               <li>
                 <Link to="/add-student" onClick={sideClickHandler}>
                   <Fab variant="extended" color="secondary" aria-label="add">
                     <GroupAddIcon />
-                       Add Student    
+                    Add Student
                   </Fab>
                 </Link>
               </li>
               <li>
                 <Link to="/remove-student" onClick={sideClickHandler}>
-                <Fab variant="extended" color="secondary" aria-label="add">
+                  <Fab variant="extended" color="secondary" aria-label="add">
                     <DeleteIcon />
                     Remove Student
                   </Fab>
-                  
                 </Link>
               </li>
               <li>
                 <Link to="/add-room" onClick={sideClickHandler}>
-                <Fab variant="extended" color="secondary" aria-label="add">
+                  <Fab variant="extended" color="secondary" aria-label="add">
                     <MeetingRoomIcon />
                     Add Room
                   </Fab>
@@ -70,7 +71,7 @@ function DashboardLayout() {
               </li>
               <li>
                 <Link to="/view-students" onClick={sideClickHandler}>
-                <Fab variant="extended" color="secondary" aria-label="add">
+                  <Fab variant="extended" color="secondary" aria-label="add">
                     <VisibilityIcon />
                     View Students
                   </Fab>
@@ -78,7 +79,7 @@ function DashboardLayout() {
               </li>
               <li>
                 <Link to="/view-rooms" onClick={sideClickHandler}>
-                <Fab variant="extended" color="secondary" aria-label="add">
+                  <Fab variant="extended" color="secondary" aria-label="add">
                     <ViewCozyIcon />
                     View Rooms
                   </Fab>

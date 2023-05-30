@@ -16,7 +16,7 @@ function AddStudent() {
     e.preventDefault();
     // Perform the POST request using formData
     try {
-      const response = await fetch('/api/students', {
+      const response = await fetch('http://localhost:8084/add-student', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,8 +89,8 @@ function AddStudent() {
           Room Type:
           <select name="roomType" value={formData.roomType} onChange={handleChange}>
             <option value="">Select</option>
-            <option value="3-seater">3 Seater</option>
-            <option value="4-seater">4 Seater</option>
+            <option value="3">3 Seater</option>
+            <option value="4">4 Seater</option>
           </select>
         </label>
         <button type="submit">Add Student</button>

@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import './AddRoom.css'
 
 function AddRoom() {
-  const [formData, setFormData] = useState({
-    roomNumber: '',
-    capacity: 3,
-    includesAc: false,
-    status: '',
-    vacancy: 3,
-  });
+  const [formData, setFormData] = useState(
+    {
+      roomNumber: '',
+      capacity: 3,
+      includesAc: false,
+      status: '',
+      vacancy: 3,
+      students: [],
+    }
+   
+  );
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Perform the POST request using formData
     try {
-      const response = await fetch('/api/rooms', {
+      const response = await fetch('http://localhost:8084/add-rooms', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +73,12 @@ function AddRoom() {
         </label>
         <label>
           Status:
-          <input type="text" name="status" value={formData.status} onChange={handleChange} />
+         
+          <select name="status" value={formData.status} onChange={handleChange}>
+            <option value="">Select</option>
+            <option value="available">Available</option>
+            <option value="not available">Not Available</option>
+          </select>
         </label>
         <label>
           Vacancy:

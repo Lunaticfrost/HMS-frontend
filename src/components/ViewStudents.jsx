@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
+
+
 import './ViewStudents.css';
 
 function ViewStudents() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch('/api/students')
+    fetch('http://localhost:8084/students')
       .then(response => response.json())
       .then(data => {
         setStudents(data);
@@ -22,6 +24,7 @@ function ViewStudents() {
       <table className="students-table">
         <thead>
           <tr>
+            <th>Student Id</th>
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
@@ -29,11 +32,13 @@ function ViewStudents() {
             <th>Parent Name</th>
             <th>Parent Phone</th>
             <th>Room Type</th>
+            <th>Room Number</th>
           </tr>
         </thead>
         <tbody>
           {students.map(student => (
             <tr key={student.id}>
+              <td>{student.id}</td>
               <td>{student.name}</td>
               <td>{student.email}</td>
               <td>{student.phone}</td>
@@ -41,6 +46,7 @@ function ViewStudents() {
               <td>{student.parentName}</td>
               <td>{student.parentPhone}</td>
               <td>{student.roomType}</td>
+              <td>{student.roomNumber}</td>
             </tr>
           ))}
         </tbody>

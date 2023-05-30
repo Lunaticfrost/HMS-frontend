@@ -8,7 +8,7 @@ function RemoveStudent() {
     e.preventDefault();
     // Perform the DELETE request using the studentId
     try {
-      const response = await fetch(`/api/students/${studentId}`, {
+      const response = await fetch(`http://localhost:8084/delete-students?id=${studentId}`, {
         method: 'DELETE',
       });
       if (response.ok) {

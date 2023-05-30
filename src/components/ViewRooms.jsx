@@ -6,7 +6,7 @@ function ViewRooms() {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    fetch('/api/rooms')
+    fetch('http://localhost:8084/rooms')
       .then(response => response.json())
       .then(data => {
         setRooms(data);
