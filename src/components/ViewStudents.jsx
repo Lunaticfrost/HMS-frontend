@@ -21,8 +21,8 @@ function ViewStudents() {
   return (
     <div className="view-students-container">
       <h2 className="view-students-heading">View Students</h2>
-      <table className="students-table">
-        <thead>
+      <table className="table table-bordered table-dark table-striped table-hover table-xl">
+        <thead className='thead-dark'>
           <tr>
             <th>Student Id</th>
             <th>Name</th>
@@ -35,7 +35,7 @@ function ViewStudents() {
             <th>Room Number</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='table-light'>
           {students.map(student => (
             <tr key={student.id}>
               <td>{student.id}</td>
@@ -51,6 +51,7 @@ function ViewStudents() {
           ))}
         </tbody>
       </table>
+      
     </div>
   );
 }

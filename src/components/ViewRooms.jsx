@@ -19,8 +19,8 @@ function ViewRooms() {
   return (
     <div className="view-rooms-container">
       <h2 className="view-rooms-heading">View Rooms</h2>
-      <table className="rooms-table">
-        <thead>
+      <table className="table table-bordered table-dark table-striped table-hover table-xl">
+        <thead className='thead-dark'>
           <tr>
             <th>Room Number</th>
             <th>Capacity</th>
@@ -29,7 +29,7 @@ function ViewRooms() {
             <th>Vacancy</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='table-light'>
           {rooms.map(room => (
             <tr key={room.id}>
               <td>{room.roomNumber}</td>
