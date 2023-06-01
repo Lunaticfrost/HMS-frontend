@@ -11,6 +11,7 @@ function AddStudent() {
     parentName: '',
     parentPhone: '',
     roomType: '',
+    includeAc: false,
   });
 
   const [isSuccess,setIsSuccess] = useState(false);
@@ -39,6 +40,7 @@ function AddStudent() {
           parentName: '',
           parentPhone: '',
           roomType: '',
+          includeAc: false,
         });
         
         
@@ -53,9 +55,11 @@ function AddStudent() {
   };
 
   const handleChange = (e) => {
+    const {name,value,type,checked} = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: newValue,
     });
     setIsSuccess(false);
     setIsFailure(false);
@@ -115,6 +119,15 @@ function AddStudent() {
             <option value="3">3 Seater</option>
             <option value="4">4 Seater</option>
           </select>
+        </label>
+        <label>
+          AC Room:
+          <input
+            type="checkbox"
+            name="includeAc"
+            checked={formData.includeAc}
+            onChange={handleChange}
+          />
         </label>
         <button type="submit">Add Student</button>
       </form>

@@ -33,6 +33,7 @@ function ViewStudents() {
             <th>Parent Phone</th>
             <th>Room Type</th>
             <th>Room Number</th>
+            <th>Ac room</th>
           </tr>
         </thead>
         <tbody className='table-light'>
@@ -45,8 +46,9 @@ function ViewStudents() {
               <td>{student.foodPreference}</td>
               <td>{student.parentName}</td>
               <td>{student.parentPhone}</td>
-              <td>{student.roomType}</td>
+              <td>{student.roomType} Seater</td>
               <td>{student.roomNumber}</td>
+              <td>{student.requiresAc ? 'Yes' : 'No'}</td>
             </tr>
           ))}
         </tbody>
