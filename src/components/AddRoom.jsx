@@ -63,7 +63,7 @@ function AddRoom() {
   return (<>
     {isFailure && <Alert severity="error">Some Error Occurred</Alert>}
     {isSuccess && <Alert severity="success">Room Successfully Added</Alert>}
-    <div className="add-room-container">
+    <div className="add-room-container ">
       <h2 className="add-room-heading">Add Room</h2>
       <form onSubmit={handleSubmit} className="add-room-form">
         <label>

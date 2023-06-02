@@ -33,7 +33,7 @@ function DashboardLayout() {
 
   return (
     <div className="dashboard-layout background-image">
-      <Navbar bg="dark" variant="dark" expand="lg" className="mb-0">
+      <Navbar bg="dark" variant="dark" expand="lg" className="mb-0 sticky-top">
         <Container fluid>
           <IconButton aria-label="Home" color="secondary" size="large" onClick={homeClickHandler}>
             <HomeIcon  fontSize="inherit" />
